@@ -52,7 +52,7 @@
              System.out.println("Data type: Floating point");
          else if (data_type.equals("unsigned"))
              System.out.println("Data type: Unsigned integer");
-         else if (data_type.equals("signed"))
+         else if (data_type.equals("int"))
              System.out.println("Data type: Signed integer");
          else {
              System.out.println("Wrong input at Data type");
@@ -83,7 +83,7 @@
          hexToBinary(numberList);
          if (data_type.equals("float")){
              writer(convertToFloat(numberList,size));
-         } else if (data_type.equals("signed")) {
+         } else if (data_type.equals("int")) {
              writer(binaryToInt(numberList));
          } else {
              writer(unsignedIntRep(numberList));
