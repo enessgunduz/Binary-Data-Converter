@@ -64,6 +64,7 @@
          
          hexToBinary(numberList);
          System.out.println(numberList);
+         System.out.println(binaryToInt(numberList));
      }
  
      public static void reader(BufferedReader br, String endian, String data_type, String size) throws IOException {
@@ -105,6 +106,31 @@
              // update list with binary string
              list.set(i, binaryString.toString());
          }
+    }
+
+    public static ArrayList<String> binaryToInt(ArrayList<String> list) {
+        ArrayList<String> result = new ArrayList<>();
+         int sign = 1;
+         for(int i = 0; i < list.size(); i++) {
+             long decimal = 0;
+             if(list.get(i).charAt(0) == '1') {
+                 sign = -1;
+             } else {
+                 sign = 1;
+             }
+
+             int exponent = list.get(i).length() - 1;
+             for(int j = 0; j < list.get(i).length(); j++) {
+                 if(list.get(i).charAt(j) == '1') {
+                     decimal += Math.pow(2, exponent - j);
+                 }
+             }
+             if(sign == -1) {
+                 decimal -= 2 * Math.pow(2, exponent);
+             }
+             result.add(Long.toString(decimal));
+         }
+         return result;
     }
  }
  
