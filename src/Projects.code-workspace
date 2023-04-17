@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Lexical-Analyzer"
+		},
+		{
+			"path": "../../reactapp"
+		}
+	],
+	"settings": {}
+}

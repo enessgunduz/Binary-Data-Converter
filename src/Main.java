@@ -4,15 +4,20 @@
  * Efe Özgen 150121077
  * Mustafa Tolga Akbaba 150120001
  * Muhammed Enes Gündüz 150120038
- */
+ */   
 
  import java.io.*;
  import java.util.ArrayList;
  import java.util.Arrays;
  import java.util.Collections;
  import java.util.Scanner;
- 
+
+            //  IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT 
+            //                                         YOU MUST PUT YOUR INPUT FILE UNDER SRC DİRECTORY
+            //                                                              <3            
+
  public class Main {
+    // Global variables
      static ArrayList<String> lineList = new ArrayList<>();
      static ArrayList<String> numberList = new ArrayList<>();
      static int totalLine = 0;
@@ -38,6 +43,7 @@
          FileReader fr = new FileReader(f);
          BufferedReader br = new BufferedReader(fr);
 
+        
          if (endian.equals("l"))
              System.out.println("Byte ordering: Little Endian");
          else if (endian.equals("b"))
@@ -88,7 +94,8 @@
          }
 
      }
- 
+     
+     
      public static void reader(BufferedReader br, String endian, String data_type, String size) throws IOException {
          String line = br.readLine();
          while (line != null) {
@@ -130,7 +137,8 @@
              }
          }
      }
- 
+     
+     // This function converst hexadecimal numbers to binary
      public static void hexToBinary(ArrayList<String> list) {
          for (int i = 0; i < list.size(); i++) {
              String hexString = list.get(i);
@@ -150,6 +158,7 @@
          }
     }
 
+    // This function converts binary numbers to signed integer
     public static ArrayList<String> binaryToInt(ArrayList<String> list) {
         ArrayList<String> result = new ArrayList<>();
          int sign = 1;
@@ -175,6 +184,7 @@
          return result;
     }
 
+    //This function converts unsigned numbers to integer
      public static ArrayList<String> unsignedIntRep(ArrayList<String> numList){
 
          ArrayList<String> resultList = new ArrayList<>();
@@ -185,6 +195,7 @@
          return resultList;
      }
 
+     // This function converts binary numbers
      public static long binToInt(String bin){
          long result=0;
          long power=bin.length()-1;
@@ -196,6 +207,7 @@
          return result;
      }
 
+     //This function converts numbers to float
      public static ArrayList<String> convertToFloat(ArrayList<String> binaryList, String dataSize) {
          ArrayList<String> result = new ArrayList<>();
          int exponentBits = 0;
@@ -251,12 +263,7 @@
                  } else
                      exponent =1;
                  double value = signBit * (fraction) * Math.pow(2, exponent - ((int) Math.pow(2, exponentBits - 1) - 1));
-                 /*String out = String.format("%.5f", value);
-                 if (out.equals("-0.00000") || out.equals("0.00000")){
-                     result.add(String.format("%.5e", value));
-                 }else {
-                     result.add(String.format("%.5f", value));
-                 }*/
+                 
                  String out = String.format("%.5e", value);
                  for (int i = 6; i < out.length(); i++) {
                      if(out.charAt(i)=='e'){
@@ -278,6 +285,7 @@
 
  }
  
+ // End of file
  
  
  
