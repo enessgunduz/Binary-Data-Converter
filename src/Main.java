@@ -1,11 +1,9 @@
-//Systems Programming Project
 
 /*
- * Input reading
- * Ask user signed integer or else
- * If signed integer -> 2's complement representation
- * If unsigned integer -> unsigned integer representaiton
- * If floating point -> IEEE format, 
+ * Eren Duyuk 150120509
+ * Efe Özgen 150121077
+ * Mustafa Tolga Akbaba 150120001
+ * Muhammed Enes Gündüz 150120038
  */
 
  import java.io.*;
